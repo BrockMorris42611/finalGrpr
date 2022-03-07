@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "317716252612",
+    "firebase_url": "https://mapproject-1487260540141.firebaseio.com",
+    "project_id": "mapproject-1487260540141",
+    "storage_bucket": "mapproject-1487260540141.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:317716252612:android:9112f48c8718f9e7bac691",
+        "android_client_info": {
+          "package_name": "edu.temple.grpr"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "317716252612-6vgghh7spfs6iim694p4bgjfubuhdrlg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBfDXFHTsXTWHsGrso5tFmeu-LxP3XOTwU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "317716252612-6vgghh7spfs6iim694p4bgjfubuhdrlg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
