@@ -12,11 +12,11 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import com.google.android.gms.maps.model.LatLng
-import com.google.firebase.messaging.FirebaseMessaging
 import org.json.JSONArray
 import org.json.JSONObject
+import java.io.File
 
-class MainActivity : AppCompatActivity(), DashboardFragment.DashboardInterface, GroupFragment.GroupControlInterface {
+class MainActivity : AppCompatActivity(), DashboardFragment.DashboardInterface, GroupFragment.GroupControlInterface{
 
     private var serviceIntent: Intent? = null
     private val grprViewModel : GrPrViewModel by lazy {
@@ -48,8 +48,15 @@ class MainActivity : AppCompatActivity(), DashboardFragment.DashboardInterface, 
                     )
                 )
             }
-
             grprViewModel.setGroup(group)
+
+            val recievedFile = JSONObject(p1.getStringExtra(FCMService.MSSG_KEY)!!)
+            val parsed = recievedFile.getString("username") //save file that isnt from our message if we sent one
+            if(parsed != Helper.user.get(this@MainActivity).username){
+                val myFile = File(this@MainActivity.filesDir, recievedFile.getString("message_file"))
+                openFileOutput(myFile.name, Context.MODE_PRIVATE)
+            }
+
         }
     }
 
@@ -82,14 +89,15 @@ class MainActivity : AppCompatActivity(), DashboardFragment.DashboardInterface, 
             startLocationService()
         }
 
-        if (checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && checkSelfPermission(
-                Manifest.permission.ACCESS_COARSE_LOCATION
-            ) != PackageManager.PERMISSION_GRANTED
+        if (checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION)   != PackageManager.PERMISSION_GRANTED &&
+            checkSelfPermission(Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED &&
+            checkSelfPermission(Manifest.permission.RECORD_AUDIO)           != PackageManager.PERMISSION_GRANTED
         ) {
             requestPermissions(
                 arrayOf(
                     Manifest.permission.ACCESS_FINE_LOCATION,
-                    Manifest.permission.ACCESS_COARSE_LOCATION
+                    Manifest.permission.ACCESS_COARSE_LOCATION,
+                    Manifest.permission.RECORD_AUDIO
                 ), 1
             )
         }
@@ -171,6 +179,11 @@ class MainActivity : AppCompatActivity(), DashboardFragment.DashboardInterface, 
             .navigate(R.id.action_dashboardFragment_to_loginFragment)
     }
 
+    override fun seeRecords() {
+        Navigation.findNavController(findViewById(R.id.fragmentContainerView))
+            .navigate(R.id.action_dashboardFragment_to_recordsFragment)
+    }
+
     private fun startLocationService() {
         bindService(serviceIntent, serviceConnection, BIND_AUTO_CREATE)
         startService(serviceIntent)
@@ -217,5 +230,4 @@ class MainActivity : AppCompatActivity(), DashboardFragment.DashboardInterface, 
             }
         )
     }
-
 }

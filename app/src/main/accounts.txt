@@ -1,2 +1,2 @@
 username   :  jamesh
-password   :  pas42611
+password   :  pass42611

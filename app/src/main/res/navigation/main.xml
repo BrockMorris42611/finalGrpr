@@ -43,10 +43,18 @@
             app:destination="@id/loginFragment"
             app:popUpTo="@id/main"
             app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_dashboardFragment_to_recordsFragment"
+            app:destination="@id/recordsFragment" />
     </fragment>
     <fragment
         android:id="@+id/groupFragment"
         android:name="edu.temple.grpr.GroupFragment"
         android:label="fragment_group"
         tools:layout="@layout/fragment_group" />
+    <fragment
+        android:id="@+id/recordsFragment"
+        android:name="edu.temple.grpr.RecordsFragment"
+        android:label="fragment_records"
+        tools:layout="@layout/fragment_records" />
 </navigation>

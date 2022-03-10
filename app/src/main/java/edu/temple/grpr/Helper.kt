@@ -9,6 +9,7 @@ import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import com.google.android.gms.maps.model.LatLng
 import org.json.JSONObject
+import java.io.File
 
 /**
  * A helper class to store all functions relating to:
@@ -19,6 +20,7 @@ class Helper {
 
     object api {
 
+        
         val ENDPOINT_GROUP = "group.php"
         val ENDPOINT_USER = "account.php"
 
@@ -26,6 +28,17 @@ class Helper {
 
         interface Response {
             fun processResponse(response: JSONObject)
+        }
+
+        fun sendAudioMessage(context: Context, user: User, sessionKey: String, groupId: String, mssg_file: File, response: Response?){
+            val params = mutableMapOf(
+                Pair("action", "MESSAGE"),
+                Pair("username", user.username),
+                Pair("session_key", sessionKey),
+                Pair("group_id", groupId),
+                Pair("message_file", mssg_file)
+            )
+            //makeRequest(context)
         }
 
         fun createAccount(context: Context, user: User, password: String, response: Response?){

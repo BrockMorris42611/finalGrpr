@@ -16,5 +16,11 @@
         android:id="@+id/action_logout"
         android:icon="@drawable/logout_24"
         android:title="Log Out"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/action_records"
+        android:icon="@drawable/logout_24"
+        android:title="Records"
         app:showAsAction="never" />
+
 </menu>

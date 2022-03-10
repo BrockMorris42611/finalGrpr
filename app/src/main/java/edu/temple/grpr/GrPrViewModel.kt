@@ -27,6 +27,10 @@ class GrPrViewModel : ViewModel() {
         MutableLiveData<Group>()
     }
 
+    val audioMssgList by lazy {
+        mutableListOf<AudioMssg>()
+    }
+
     fun setGroupId(id: String) {
         groupId.value = id
     }

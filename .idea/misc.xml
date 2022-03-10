@@ -3,6 +3,16 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/IAD/GrprFinal/app/src/main/res/drawable/ic_baseline_mic_24.xml" value="0.136" />
+        <entry key="..\:/IAD/GrprFinal/app/src/main/res/layout/activity_main.xml" value="0.18802083333333333" />
+        <entry key="..\:/IAD/GrprFinal/app/src/main/res/layout/fragment_dashboard.xml" value="0.18802083333333333" />
+        <entry key="..\:/IAD/GrprFinal/app/src/main/res/layout/fragment_group.xml" value="0.18802083333333333" />
+        <entry key="..\:/IAD/GrprFinal/app/src/main/res/layout/fragment_login.xml" value="0.18802083333333333" />
+        <entry key="..\:/IAD/GrprFinal/app/src/main/res/layout/fragment_maps.xml" value="0.18802083333333333" />
+        <entry key="..\:/IAD/GrprFinal/app/src/main/res/layout/fragment_records.xml" value="0.18802083333333333" />
+        <entry key="..\:/IAD/GrprFinal/app/src/main/res/layout/fragment_register.xml" value="0.18802083333333333" />
+        <entry key="..\:/IAD/GrprFinal/app/src/main/res/layout/recycler_view_layout.xml" value="0.18802083333333333" />
+        <entry key="..\:/IAD/GrprFinal/app/src/main/res/menu/dashboard.xml" value="0.18802083333333333" />
         <entry key="app/src/main/res/drawable/group_add_24.xml" value="0.307" />
         <entry key="app/src/main/res/drawable/logout_24.xml" value="0.307" />
         <entry key="app/src/main/res/drawable/person_pin_24.xml" value="0.1965" />
